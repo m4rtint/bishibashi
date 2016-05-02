@@ -10,12 +10,21 @@ public class ScoreScript : MonoBehaviour {
 	Text store_count;
 	bool up;
 
+	GameObject timer;
+
 	// Use this for initialization
 	void Start () {
 		up = false;
 		score = 0;
 		next_step = 1;
 		step = new float[] {(float)-4.75,-1,3};
+		timer = GameObject.Find ("Timer");
+	}
+
+	void Update() {
+		if (!timer.GetComponent<Timer> ().get_gameRunning ()) {
+			this.GetComponent<Text> ().CrossFadeAlpha (0, 0, true);
+		}
 	}
 
 	//Update score given current X position.
@@ -41,4 +50,7 @@ public class ScoreScript : MonoBehaviour {
 		
 	}
 
+	public int get_score() {
+		return score;
+	}
 }

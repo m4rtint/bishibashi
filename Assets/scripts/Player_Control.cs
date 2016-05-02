@@ -2,28 +2,35 @@
 using System.Collections;
 
 public class Player_Control : MonoBehaviour {
-	public bool left = false;
-	public bool right = false;
-	public bool down = false;
-
-	public float last_x_position = -1;
+	bool left = false;
+	bool right = false;
+	bool down = false;
 
 	Animator anim;
 
 	GameObject global;
+	GameObject timer;
 
 	void Start(){
 		anim = GetComponent<Animator> ();
-		last_x_position = 3;
 		global = GameObject.Find ("TextScore");
+		timer = GameObject.Find ("Timer");
 	}
 
 	void Update () {
+		if (timer.GetComponent<Timer>().get_gameRunning()) {
+			inputControl ();
+		} else {
+			anim.Stop ();
+		}
+	}
+
+	void inputControl() {
 		left = Input.GetKeyUp (KeyCode.LeftArrow);
 		right = Input.GetKeyUp (KeyCode.RightArrow);
 		down = Input.GetKeyUp (KeyCode.DownArrow);
 
-		int position_x = (int) transform.position.x;
+		int position_x = (int)transform.position.x;
 
 		switch (position_x) {
 		case 3:
@@ -50,11 +57,8 @@ public class Player_Control : MonoBehaviour {
 		}
 	}
 
-	void moveCharacter(string animation, float x) {
-		last_x_position = transform.position.x;
+	void moveCharacter(string animation, float landing_x) {
 		anim.SetTrigger(animation);
-		global.GetComponent<ScoreScript> ().update_score (x);
+		global.GetComponent<ScoreScript> ().update_score (landing_x);
 	}
-	
-
 }

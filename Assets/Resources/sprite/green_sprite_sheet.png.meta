@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: 37c2a9e2aaddc47239c731daaf4ad912
+timeCreated: 1462135376
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: green_sprite_sheet_0
+    21300002: green_sprite_sheet_1
+    21300004: green_sprite_sheet_2
+    21300006: green_sprite_sheet_3
+    21300008: green_sprite_sheet_4
+    21300010: green_sprite_sheet_5
+    21300012: green_sprite_sheet_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: green_sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 99
+        width: 64
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: -27.5}
+        - {x: 26, y: 28.5}
+        - {x: 13, y: 45.5}
+        - {x: -14, y: 45.5}
+        - {x: -26, y: 28.5}
+        - {x: -32, y: -26.5}
+        - {x: -32, y: -45.5}
+        - {x: 32, y: -45.5}
+    - name: green_sprite_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 99
+        width: 64
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.56}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: -44.800003}
+        - {x: 32, y: -44.800003}
+        - {x: 32, y: -2.800003}
+        - {x: 27, y: 32.199997}
+        - {x: 24, y: 35.199997}
+        - {x: -18, y: 35.199997}
+        - {x: -32, y: 30.199997}
+    - name: green_sprite_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 99
+        width: 63
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 46}
+        - {x: -31.5, y: -46}
+        - {x: -11.5, y: -46}
+        - {x: 31.5, y: -32}
+        - {x: 31.5, y: 36}
+        - {x: 29.5, y: 46}
+    - name: green_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 99
+        width: 64
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 47}
+        - {x: -32, y: -47}
+        - {x: 32, y: -47}
+        - {x: 32, y: -20}
+        - {x: 26, y: 23}
+        - {x: 3, y: 47}
+    - name: green_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 10
+        width: 65
+        height: 81
+      alignment: 9
+      pivot: {x: 0.5, y: 0.56}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32.5, y: -45.36}
+        - {x: 32.5, y: -12.360001}
+        - {x: 25.5, y: 24.64}
+        - {x: 18.5, y: 35.64}
+        - {x: -14.5, y: 35.64}
+        - {x: -32.5, y: 27.64}
+        - {x: -32.5, y: -45.36}
+        - {x: -19.5, y: -45.36}
+        - {x: -8.5, y: -39.36}
+        - {x: -4.5, y: -35.36}
+        - {x: 10.5, y: -45.36}
+    - name: green_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 3
+        width: 64
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 46}
+        - {x: -32, y: 39}
+        - {x: -32, y: -35}
+        - {x: -29, y: -43}
+        - {x: -9, y: -46}
+        - {x: 32, y: -46}
+        - {x: 32, y: 17}
+        - {x: 16, y: 46}
+    - name: green_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 3
+        width: 64
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 47.5}
+        - {x: -32, y: 20.5}
+        - {x: -32, y: -47.5}
+        - {x: 14, y: -47.5}
+        - {x: 32, y: -38.5}
+        - {x: 32, y: 47.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
