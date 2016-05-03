@@ -6,6 +6,7 @@ public class scoreBoardText : MonoBehaviour {
 
 	GameObject timer;
 	GameObject scoreScript;
+
 	// Use this for initialization
 	void Start () {
 		scoreScript = GameObject.Find ("TextScore");
@@ -26,7 +27,8 @@ public class scoreBoardText : MonoBehaviour {
 	}
 
 	void countUpScore() {
+		int qualify = scoreScript.GetComponent<ScoreScript> ().qualify;
 		int score = scoreScript.GetComponent<ScoreScript> ().get_score ();
-		this.GetComponent<Text>().text = "Qualify     50\nScore       "+score;
+		this.GetComponent<Text>().text = "Qualify     "+qualify+"\nScore       "+score;
 	}
 }

@@ -8,8 +8,7 @@ public class Player_Control : MonoBehaviour {
 
 	Animator anim;
 
-	GameObject global;
-	GameObject timer;
+	GameObject global,timer;
 
 	void Start(){
 		anim = GetComponent<Animator> ();
@@ -26,9 +25,9 @@ public class Player_Control : MonoBehaviour {
 	}
 
 	void inputControl() {
-		left = Input.GetKeyUp (KeyCode.LeftArrow);
-		right = Input.GetKeyUp (KeyCode.RightArrow);
-		down = Input.GetKeyUp (KeyCode.DownArrow);
+		left = Input.GetKeyDown (KeyCode.LeftArrow);
+		right = Input.GetKeyDown (KeyCode.RightArrow);
+		down = Input.GetKeyDown (KeyCode.DownArrow);
 
 		int position_x = (int)transform.position.x;
 

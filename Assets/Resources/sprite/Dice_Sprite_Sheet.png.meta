@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: adb5f885ea94a45f88733d440252065a
+timeCreated: 1462208711
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_0
+    21300002: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_1
+    21300004: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_2
+    21300006: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_3
+    21300008: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_4
+    21300010: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_5
+    21300012: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_6
+    21300014: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_7
+    21300016: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_8
+    21300018: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_9
+    21300020: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_10
+    21300022: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_11
+    21300024: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_12
+    21300026: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_13
+    21300028: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_14
+    21300030: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_15
+    21300032: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_16
+    21300034: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_17
+    21300036: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_18
+    21300038: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_19
+    21300040: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_20
+    21300042: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_21
+    21300044: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_22
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 849
+        width: 81
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40.5, y: 26}
+        - {x: 39.5, y: 27}
+        - {x: 9.5, y: 37}
+        - {x: -17.5, y: 37}
+        - {x: -40.5, y: 26}
+        - {x: -40.5, y: -37}
+        - {x: 40.5, y: -37}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 847
+        width: 72
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 38}
+        - {x: -36, y: 28}
+        - {x: -36, y: -26}
+        - {x: -26, y: -38}
+        - {x: 36, y: -38}
+        - {x: 36, y: 22}
+        - {x: 21, y: 38}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_2
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 845
+        width: 61
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 36.5}
+        - {x: -30.5, y: -36.5}
+        - {x: 30.5, y: -36.5}
+        - {x: 30.5, y: 36.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 847
+        width: 72
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 38}
+        - {x: -34, y: 38}
+        - {x: -36, y: 27}
+        - {x: -36, y: -38}
+        - {x: 18, y: -38}
+        - {x: 36, y: -26}
+        - {x: 36, y: 26}
+        - {x: 27, y: 37}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 765
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_5
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 765
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 765
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_7
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 765
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 35.5}
+        - {x: -42, y: 29.5}
+        - {x: -42, y: -35.5}
+        - {x: 35, y: -35.5}
+        - {x: 42, y: -23.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 685
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 685
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 685
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_11
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 685
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 605
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 605
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_14
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 605
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_15
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 605
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 525
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 525
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 525
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_19
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 525
+        width: 84
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35.5}
+        - {x: -42, y: 31.5}
+        - {x: -42, y: -35.5}
+        - {x: 29, y: -35.5}
+        - {x: 42, y: -22.5}
+        - {x: 42, y: 35.5}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_20
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 306
+        width: 320
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 102}
+        - {x: -160, y: -102}
+        - {x: 160, y: -102}
+        - {x: 160, y: 102}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_21
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 100
+        width: 320
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 102}
+        - {x: -160, y: -102}
+        - {x: 160, y: -102}
+        - {x: 160, y: 102}
+    - name: PlayStation - Bishi Bashi Special - Dice Dice Even More Dice_22
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 9
+        width: 104
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 41}
+        - {x: -52, y: -41}
+        - {x: 52, y: -41}
+        - {x: 52, y: 41}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

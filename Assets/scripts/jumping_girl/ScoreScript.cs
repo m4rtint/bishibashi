@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour {
 	int score;
+	public int qualify;
 
 	float[] step;
 	int next_step;
