@@ -9,10 +9,13 @@ public class diceL_Script : MonoBehaviour {
 	int value;
 
 	GameObject diceValue;
+	dice_Randomizer dice;
 
 	void Start() {
 		anim = GetComponent<Animator> ();
 		diceValue = GameObject.Find ("randomizer");
+		dice = diceValue.GetComponent<dice_Randomizer> ();
+		anim.SetInteger ("Value", dice.get_value (0));
 	}
 
 	void Update() {
