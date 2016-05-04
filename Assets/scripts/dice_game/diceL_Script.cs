@@ -3,7 +3,6 @@ using System.Collections;
 
 public class diceL_Script : MonoBehaviour {
 
-	Sprite[] dice;
 	Animator anim;
 	bool space = false;
 
@@ -12,7 +11,6 @@ public class diceL_Script : MonoBehaviour {
 	GameObject diceValue;
 
 	void Start() {
-		dice = Resources.LoadAll<Sprite> ("sprite/Dice_Sprite_Sheet");
 		anim = GetComponent<Animator> ();
 		diceValue = GameObject.Find ("randomizer");
 	}
