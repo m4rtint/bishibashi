@@ -4,13 +4,17 @@ using System.Collections;
 public class diceScoreScript : MonoBehaviour {
 
 	//Scoreboard
-	int p1_score, p2_score;
+	int p1_score,p2_score;
 
 	//P1 - Controls
-	bool left, down, right;
+	bool left,down,right, P1_allowPress;
 
 	//P2 - Controls
-	bool a,s,d;
+	bool a,s,d, P2_allowPress;
+
+	//Whether or not to randomize
+	bool startRandomize;
+	int startAnim;
 
 	//Reference to other scripts
 	GameObject value;
@@ -18,6 +22,16 @@ public class diceScoreScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//Set whether or not to randomize
+		startAnim = 0;
+		startRandomize = false;
+
+
+		//Allow players to press
+		P1_allowPress = true;
+		P2_allowPress = true;
+
+		//Players scores
 		p1_score = 0;
 		p2_score = 0;
 
@@ -48,60 +62,77 @@ public class diceScoreScript : MonoBehaviour {
 		s = Input.GetKeyDown (KeyCode.S);
 		d = Input.GetKeyDown (KeyCode.D);
 
-		//Dice Position - 0
-		if (left) {
-			if (Compare_Max_Value (0)) {
-				//Correct Match
-					//Circle Sprite appears
-					//Score adds up
-				p2_score += diceValue.get_value (0);
-				Debug.Log (p2_score);
-				Debug.Log ("Dice Value :"+diceValue.get_value (0));
-			} else {
-				//Incorrect Match
-					//Cross Sprite appears
-					//Freeze buttons
-				Debug.Log (p2_score);
-				Debug.Log ("Dice Value :"+diceValue.get_value (0));
+		if (P1_allowPress) {
+			//Dice Position - P1 - 0
+			if (a) {
+				updateScore (1, 0);
+			}
+
+			//Dice Position - P1 - 1
+			if (s) {
+				updateScore (1, 1);
+			}
+
+			//Dice Position - P1 - 2
+			if (d) {
+				updateScore (1, 2);
 			}
 		}
 
-		//Dice Position - 1
-		if (down) {
-			if (Compare_Max_Value (1)) {
-				//Correct Match
-				//Circle Sprite appears
-				//Score adds up
-				p2_score += diceValue.get_value (1);
-				Debug.Log (p2_score);
-				Debug.Log ("Dice Value :"+diceValue.get_value (1));
-			} else {
-				//Incorrect Match
-				//Cross Sprite appears
-				//Freeze buttons
-				Debug.Log (p2_score);
-				Debug.Log ("Dice Value :"+diceValue.get_value (1));
+		if (P2_allowPress) {
+			//Dice Position - P2 - 0
+			if (left) {
+				updateScore (2, 0);
+			}
+
+			//Dice Position - P2 - 1
+			if (down) {
+				updateScore (2, 1);
+			}
+
+			//Dice Position - P2 - 2
+			if (right) {
+				updateScore (2, 2);
 			}
 		}
 
-		//Dice Position - 2
-		if (right) {
-			if (Compare_Max_Value (2)) {
-				//Correct Match
-				//Circle Sprite appears
-				//Score adds up
-				p2_score += diceValue.get_value (2);
-				Debug.Log (p2_score);
-				Debug.Log ("Dice Value :"+diceValue.get_value (2));
+		if (!P1_allowPress && !P2_allowPress) {
+			P1_allowPress = true;
+			P2_allowPress = true;
+			startRandomize = true;
+			Invoke ("set_startAnim_full", 0.1f);
+		}
+	}
+
+	void updateScore(int player, int diceLocation) {
+		if (Compare_Max_Value (diceLocation)) {
+			//Correct Match
+			//Circle Sprite appears
+			//Score adds up
+			P1_allowPress = true;
+			P2_allowPress = true;
+			startRandomize = true;
+			Invoke ("set_startAnim_full", 0.1f);
+			if (player == 1) {
+				p1_score += diceValue.get_value (diceLocation);
+				Debug.Log (p1_score);
 			} else {
-				//Incorrect Match
-				//Cross Sprite appears
-				//Freeze buttons
+				p2_score += diceValue.get_value (diceLocation);
 				Debug.Log (p2_score);
-				Debug.Log ("Dice Value :"+diceValue.get_value (2));
+			}
+		} else {
+			//Incorrect Match
+			//Cross Sprite appears
+			//Freeze buttons
+			if (player == 1) {
+				P1_allowPress = false;
+				Debug.Log (p1_score);
+			} else {
+				P2_allowPress = false;
+				Debug.Log (p2_score);
 			}
 		}
-
+		Debug.Log ("Dice Value :"+diceValue.get_value (diceLocation));
 	}
 
 	bool Compare_Max_Value(int dice_position) {
@@ -110,5 +141,25 @@ public class diceScoreScript : MonoBehaviour {
 		} else {
 			return false;
 		}
+	}
+
+	public bool get_startRandomize() {
+		return startRandomize;
+	}
+
+	public void set_startRandomize_false() {
+		startRandomize = false;
+	}
+
+	public int get_startAnim() {
+		return startAnim;
+	}
+
+	public void set_startAnim_minus() {
+		startAnim--;
+	}
+
+	void set_startAnim_full() {
+		startAnim = 3;
 	}
 }

@@ -11,28 +11,31 @@ public class dice_Randomizer : MonoBehaviour {
 	float min, max;
 
 	bool randomize = false;
+
+	GameObject diceObject;
+	diceScoreScript diceScoreScript;
 	// Use this for initialization
 	void Start () {
 		min = 1;
 		max = 5;
 		randomizeValues ();
-		Debug.Log (value [0]);
-		Debug.Log (value [1]);
-		Debug.Log (value [2]);
+
+		diceObject = GameObject.Find ("randomizer");
+		diceScoreScript = diceObject.GetComponent<diceScoreScript> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		randomize = Input.GetKeyDown(KeyCode.Space);
+		randomize = diceScoreScript.get_startRandomize();
 		if (randomize && ablePress) {
-			ablePress = false;
-			Invoke ("set_ablePress_true",1f);
-
 			randomizeValues ();
+			ablePress = false;
+			Invoke ("set_ablePress_true", 1f);
 
 			if (max <= 16) {
 				max++;
 			}
+			diceScoreScript.set_startRandomize_false ();
 		}
 	}
 
@@ -44,6 +47,9 @@ public class dice_Randomizer : MonoBehaviour {
 			value [2] = (int)Random.Range (min, max);
 		} while(value [1] == value [0] || value [2] == value [1] || value [2] == value [0]);
 
+		Debug.Log (value [0]);
+		Debug.Log (value [1]);
+		Debug.Log (value [2]);
 	}
 
 	public int get_value(int i) {
