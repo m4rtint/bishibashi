@@ -32,24 +32,19 @@ public class dice_Randomizer : MonoBehaviour {
 			ablePress = false;
 			Invoke ("set_ablePress_true", 1f);
 
-			if (max <= 16) {
-				max++;
-			}
+			if (max <= 16) { max++; }
 			diceScoreScript.set_startRandomize_false ();
 		}
 	}
 
 	void randomizeValues() {
 		//Generate random number into value.
-		value[0] = (int) Random.Range (min, max);
 		do {
-			value [1] = (int)Random.Range (min, max);
-			value [2] = (int)Random.Range (min, max);
-		} while(value [1] == value [0] || value [2] == value [1] || value [2] == value [0]);
-
-		Debug.Log (value [0]);
-		Debug.Log (value [1]);
-		Debug.Log (value [2]);
+			for(int x = 0; x < 3; x++) 
+			{
+				value [x] = (int)Random.Range (min, max);
+			}
+		} while(value.Distinct ().Count () != value.Count ());
 	}
 
 	public int get_value(int i) {

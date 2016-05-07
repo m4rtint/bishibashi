@@ -18,6 +18,7 @@ public class diceScoreScript : MonoBehaviour {
 
 	//Reference to other scripts
 	GameObject value;
+	GameObject dice_L_obj, dice_M_obj, dice_R_obj;
 	dice_Randomizer diceValue;
 
 	// Use this for initialization
@@ -48,6 +49,10 @@ public class diceScoreScript : MonoBehaviour {
 		//Other Script values
 		value = GameObject.Find("randomizer");
 		diceValue = value.GetComponent<dice_Randomizer> ();
+		dice_L_obj = GameObject.Find ("result_L");
+		dice_M_obj = GameObject.Find ("result_M");
+		dice_R_obj = GameObject.Find ("result_R");
+
 	}
 	
 	// Update is called once per frame
@@ -97,42 +102,45 @@ public class diceScoreScript : MonoBehaviour {
 		}
 
 		if (!P1_allowPress && !P2_allowPress) {
-			P1_allowPress = true;
-			P2_allowPress = true;
-			startRandomize = true;
-			Invoke ("set_startAnim_full", 0.1f);
+			start_Randomize ();
 		}
 	}
 
 	void updateScore(int player, int diceLocation) {
 		if (Compare_Max_Value (diceLocation)) {
-			//Correct Match
+		//Correct Match
 			//Circle Sprite appears
-			//Score adds up
-			P1_allowPress = true;
-			P2_allowPress = true;
-			startRandomize = true;
-			Invoke ("set_startAnim_full", 0.1f);
+			set_result(true, diceLocation, player);
+
+			//Randomize Numbers
+			start_Randomize();
+
+			//Add up score
 			if (player == 1) {
 				p1_score += diceValue.get_value (diceLocation);
-				Debug.Log (p1_score);
+				Debug.Log ("P1 :"+p1_score);
 			} else {
 				p2_score += diceValue.get_value (diceLocation);
-				Debug.Log (p2_score);
+				Debug.Log ("P2 :"+p2_score);
 			}
 		} else {
-			//Incorrect Match
+		//Incorrect Match
 			//Cross Sprite appears
+			set_result(false,diceLocation, player);
+
 			//Freeze buttons
 			if (player == 1) {
 				P1_allowPress = false;
-				Debug.Log (p1_score);
+				Debug.Log ("P1 :"+p1_score);
 			} else {
 				P2_allowPress = false;
-				Debug.Log (p2_score);
+				Debug.Log ("P2 :"+p2_score);
 			}
 		}
-		Debug.Log ("Dice Value :"+diceValue.get_value (diceLocation));
+	}
+
+	void resultAppear(bool result, int diceLocation) {
+
 	}
 
 	bool Compare_Max_Value(int dice_position) {
@@ -143,6 +151,43 @@ public class diceScoreScript : MonoBehaviour {
 		}
 	}
 
+	void start_Randomize() {
+		P1_allowPress = true;
+		P2_allowPress = true;
+		startRandomize = true;
+		Invoke ("set_startAnim_full", 1f);
+		Invoke ("set_disappearIcon", 1f);
+
+	}
+
+	void set_disappearIcon(){
+		dice_L_obj.GetComponent<DiceResultScript> ().set_disappear_icon ();
+		dice_M_obj.GetComponent<DiceResultScript> ().set_disappear_icon ();
+		dice_R_obj.GetComponent<DiceResultScript> ().set_disappear_icon ();
+	}
+
+	void set_startAnim_full() {
+		startAnim = 3;
+	}
+
+	void set_result(bool rightwrong, int diceLocation,int player){
+		switch (diceLocation) {
+		case 0:
+			dice_L_obj.GetComponent<DiceResultScript> ().set_Result(rightwrong);
+			break;
+		case 1:
+			dice_M_obj.GetComponent<DiceResultScript> ().set_Result(rightwrong);
+			break;
+		case 2:
+			dice_R_obj.GetComponent<DiceResultScript> ().set_Result(rightwrong);
+			break;
+		default:
+			return;
+		}
+	}
+
+
+	// Public Methods
 	public bool get_startRandomize() {
 		return startRandomize;
 	}
@@ -159,7 +204,5 @@ public class diceScoreScript : MonoBehaviour {
 		startAnim--;
 	}
 
-	void set_startAnim_full() {
-		startAnim = 3;
-	}
+
 }
