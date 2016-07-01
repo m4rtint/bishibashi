@@ -4,7 +4,7 @@ using System.Collections;
 public class FadeObjectInOut : MonoBehaviour
 {
 	float duration = 1;
-	float alpha = 0;
+	float alphaTemp = 0;
 
 
 	public void Update(){
@@ -14,8 +14,8 @@ public class FadeObjectInOut : MonoBehaviour
 	private void lerpAlpha(){
 		float lerp = Mathf.PingPong (Time.time, duration) / duration;
 
-		alpha = Mathf.Lerp (0, 1, lerp);
-		//renderer.GetComponent<Renderer>().color.a = alpha;
+		alphaTemp = Mathf.Lerp (0, 1, lerp);
+		this.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, alphaTemp);
 	}
 
 
