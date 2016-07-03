@@ -17,7 +17,7 @@ public class GameSelectionController : MonoBehaviour {
 	readonly int min_index = 2;
 	readonly int max_index = 3;
 
-	AudioClip myClip;
+	public AudioClip soundEffect;
 
 	void Start() {
 		x_position = this.GetComponent<Transform> ().position.x;
@@ -32,20 +32,24 @@ public class GameSelectionController : MonoBehaviour {
 		enter = Input.GetKeyDown (KeyCode.Return);
 		space = Input.GetKeyDown (KeyCode.Space);
 
-		if (left && (current_index+1 > max_index)) {
-			current_index--;
-			x_position = this.GetComponent<Transform> ().position.x + 5;
-
-		}
-		if (right && (current_index-1 < min_index)) {
+		if (left && (current_index-1 < min_index)) {
 			current_index++;
 			x_position = this.GetComponent<Transform> ().position.x - 5;
+
+		}
+		if (right && (current_index+1 > max_index)) {
+			current_index--;
+			x_position = this.GetComponent<Transform> ().position.x + 5;
 		}
 
 		if (enter || space) {
 
+			//Play Sound effect
+			AudioSource source = GetComponent<AudioSource>();
+			source.PlayOneShot (soundEffect,1.0F);
+
+			//Start new level
 			StartCoroutine(changeLevel ());
-			GameObject.Find ("FadeInOut").audio.PlayOnce (myClip);
 		}
 
 		target = new Vector3(x_position,0,0);
