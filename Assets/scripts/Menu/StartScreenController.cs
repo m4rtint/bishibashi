@@ -20,6 +20,6 @@ public class StartScreenController : MonoBehaviour {
 		Debug.Log ("Inside");
 		float fadeTime = this.GetComponent<ScreenFading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
-		SceneManager.LoadScene ('MainMenu');
+		SceneManager.LoadScene ("MainMenu");
 	}
 }
