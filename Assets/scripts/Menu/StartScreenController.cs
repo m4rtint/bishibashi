@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class StartScreenController : MonoBehaviour {
 
@@ -19,6 +20,6 @@ public class StartScreenController : MonoBehaviour {
 		Debug.Log ("Inside");
 		float fadeTime = this.GetComponent<ScreenFading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
-		Application.LoadLevel (1);
+		SceneManager.LoadScene ('MainMenu');
 	}
 }

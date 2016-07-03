@@ -1,28 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameSelectionController : MonoBehaviour {
 
 	Vector3 target;
 	float x_position;
 
-	readonly float speed = 50;
+	readonly float speed = 50; //Speed of animation choosing game
 
 	bool left;
 	bool right;
 	bool enter;
 	bool space;
 
-	int current_index;
-	readonly int min_index = 2;
-	readonly int max_index = 3;
+	int current_index; //Currently pointing at game #
+	readonly int max_index = 1; //Amount of games that can be selected
+
+	string level_name; //Current Chosen level name
 
 	public AudioClip soundEffect;
 
 	void Start() {
 		x_position = this.GetComponent<Transform> ().position.x;
 		target = new Vector3 (x_position, 0, 0);
-		current_index = 2;
+		current_index = 0;
 	}
 	
 	// Update is called once per frame
@@ -32,16 +34,26 @@ public class GameSelectionController : MonoBehaviour {
 		enter = Input.GetKeyDown (KeyCode.Return);
 		space = Input.GetKeyDown (KeyCode.Space);
 
-		if (left && (current_index-1 < min_index)) {
+		//Make sure cannot go more to the left.
+		if (left && (current_index-1 < 0)) {
 			current_index++;
 			x_position = this.GetComponent<Transform> ().position.x - 5;
 
 		}
+
+		//Make sure Cannot go more to the right.
 		if (right && (current_index+1 > max_index)) {
 			current_index--;
 			x_position = this.GetComponent<Transform> ().position.x + 5;
 		}
 
+		//Chosen Level change when going through different games in selection menu (Main Menu).
+		if (this.GetComponent<Transform> ().position.x == 0 &&
+		    this.GetComponent<Transform> ().position.y == 0) {
+			level_name = this.name;
+		}
+
+		//Select the level
 		if (enter || space) {
 
 			//Play Sound effect
@@ -61,6 +73,6 @@ public class GameSelectionController : MonoBehaviour {
 	IEnumerator changeLevel() {
 		float fadeTime = GameObject.Find("FadeInOut").GetComponent<ScreenFading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
-		Application.LoadLevel (current_index);
+		SceneManager.LoadScene (level_name);
 	}
 }
