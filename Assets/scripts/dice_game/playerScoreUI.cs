@@ -15,6 +15,9 @@ public class playerScoreUI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		this.GetComponent<Text>().text = textScore.get_score (player).ToString();
+		if (textScore.get_score (1) >= 100 || textScore.get_score (2) >= 100)
+			this.GetComponent<Text> ().text = "";
+		else
+			this.GetComponent<Text>().text = textScore.get_score (player).ToString();
 	}
 }

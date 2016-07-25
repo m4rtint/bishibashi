@@ -21,8 +21,14 @@ public class diceScoreScript : MonoBehaviour {
 	GameObject Player_Text_L, Player_Text_M, Player_Text_R;
 	dice_Randomizer diceValue;
 
+	//Sound Effects
+	AudioSource gun_shot_sfx;
+
 	// Use this for initialization
 	void Start () {
+		//Sound effect set
+		gun_shot_sfx = GetComponent<AudioSource>();
+
 		//Set whether or not to randomize
 		startAnim = 0;
 	
@@ -67,6 +73,14 @@ public class diceScoreScript : MonoBehaviour {
 		a = Input.GetKeyDown (KeyCode.A);
 		s = Input.GetKeyDown (KeyCode.S);
 		d = Input.GetKeyDown (KeyCode.D);
+
+		//When Someone reaches winning score
+		if (p1_score >= 100 || p2_score >= 100){
+			gun_shot_sfx.Stop ();
+			GameObject.Find ("Main Camera").GetComponent<AudioSource> ().Stop ();
+			GameObject.Find ("scoreboard_final").GetComponent<scoreboard_script>().set_finish_game(p1_score,p2_score);
+			return;
+		}
 
 		if (P1_allowPress) {
 			//Dice Position - P1 - 0
@@ -139,6 +153,7 @@ public class diceScoreScript : MonoBehaviour {
 	}
 
 	void start_diceRoll(bool rw, int l, int p) {
+
 		//Result Sprite appears
 		set_result(rw, l, p);
 
@@ -192,6 +207,8 @@ public class diceScoreScript : MonoBehaviour {
 	 * Start animation on a timer 
 	 */
 	void set_startAnim_full() {
+		//Play Gunshot Sound effect
+		gun_shot_sfx.Play();
 		startAnim = 3;
 	}
 
