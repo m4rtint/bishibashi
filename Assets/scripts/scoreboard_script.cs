@@ -47,7 +47,7 @@ public class scoreboard_script : MonoBehaviour {
 			Invoke ("activateAnim", 2);
 			postGame.Play ();
 			Invoke ("showText", 5);
-			//Invoke ("endGame", 12);
+			Invoke ("endGame", 12);
 			oneTime = true;
 		}
 	}
@@ -65,12 +65,12 @@ public class scoreboard_script : MonoBehaviour {
 	void showText() {
 
 		//Show Score text on scoreboard
-		scoreText.text = p1_score+"            "+p2_score;
+		scoreText.text = p1_score+"         "+p2_score;
 		scoreText.CrossFadeAlpha (100, 10, true);
 
 		//Circle the winnner
 		winnerCircle.GetComponent<SpriteRenderer> ().color = new Color (255, 255, 255, 255);
-		if (p1_score > p2_score) {
+		if (p1_score >= p2_score) {
 			winnerCircle.GetComponent<Transform> ().position = new Vector3 (-2.0f, -1.5f, -1.0f);
 		} else {
 			winnerCircle.GetComponent<Transform> ().position = new Vector3 (2.24f, -1.5f, -1.0f);

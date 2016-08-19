@@ -6,13 +6,19 @@ public class Player_Control : MonoBehaviour {
 	bool right = false;
 	bool down = false;
 
+	public int player_num;
+
 	Animator anim;
 
 	GameObject global,timer;
 
 	void Start(){
 		anim = GetComponent<Animator> ();
-		global = GameObject.Find ("TextScore");
+		if (player_num == 1) {
+			global = GameObject.Find ("TextScore");
+		} else {
+			global = GameObject.Find ("TextScore_g");
+		}
 		timer = GameObject.Find ("Timer");
 	}
 
@@ -24,11 +30,19 @@ public class Player_Control : MonoBehaviour {
 		}
 	}
 
-	void inputControl() {
-		left = Input.GetKeyDown (KeyCode.LeftArrow);
-		right = Input.GetKeyDown (KeyCode.RightArrow);
-		down = Input.GetKeyDown (KeyCode.DownArrow);
 
+
+	void inputControl() {
+		//Get input control depending on player 1 or 2
+		if (player_num == 1) {
+			left = Input.GetKeyDown (KeyCode.LeftArrow);
+			right = Input.GetKeyDown (KeyCode.RightArrow);
+			down = Input.GetKeyDown (KeyCode.DownArrow);
+		} else {
+			left = Input.GetKeyDown (KeyCode.A);
+			right = Input.GetKeyDown (KeyCode.D);
+			down = Input.GetKeyDown (KeyCode.S);
+		}
 		int position_x = (int)transform.position.x;
 
 		switch (position_x) {

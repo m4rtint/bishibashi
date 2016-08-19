@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour {
 	int score;
-	public int qualify;
 
 	float[] step;
 	int next_step;
@@ -22,6 +21,7 @@ public class ScoreScript : MonoBehaviour {
 		timer = GameObject.Find ("Timer");
 	}
 
+	//If timer runs out, score is faded out
 	void Update() {
 		if (!timer.GetComponent<Timer> ().get_gameRunning ()) {
 			this.GetComponent<Text> ().CrossFadeAlpha (0, 0, true);
