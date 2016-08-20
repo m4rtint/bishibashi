@@ -15,7 +15,7 @@ public class GameSelectionController : MonoBehaviour {
 	bool space;
 
 	int current_index; //Currently pointing at game #
-	readonly int max_index = 1; //Amount of games that can be selected
+	readonly int max_index = 1; //Amount of games on the board
 
 	string level_name; //Current Chosen level name
 
@@ -51,6 +51,8 @@ public class GameSelectionController : MonoBehaviour {
 		if (this.GetComponent<Transform> ().position.x == 0 &&
 		    this.GetComponent<Transform> ().position.y == 0) {
 			level_name = this.name;
+		} else {
+			level_name = null;
 		}
 
 		//Select the level
@@ -60,7 +62,6 @@ public class GameSelectionController : MonoBehaviour {
 			AudioSource source = GetComponent<AudioSource>();
 			source.PlayOneShot (soundEffect,1.0F);
 
-			Debug.Log ("select level");
 			//Start new level
 			StartCoroutine(changeLevel ());
 		}
@@ -74,7 +75,6 @@ public class GameSelectionController : MonoBehaviour {
 	IEnumerator changeLevel() {
 		float fadeTime = GameObject.Find("FadeInOut").GetComponent<ScreenFading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
-		Debug.Log (level_name);
 		SceneManager.LoadScene (level_name);
 	}
 }
