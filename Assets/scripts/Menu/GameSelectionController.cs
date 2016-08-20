@@ -60,6 +60,7 @@ public class GameSelectionController : MonoBehaviour {
 			AudioSource source = GetComponent<AudioSource>();
 			source.PlayOneShot (soundEffect,1.0F);
 
+			Debug.Log ("select level");
 			//Start new level
 			StartCoroutine(changeLevel ());
 		}
@@ -73,6 +74,7 @@ public class GameSelectionController : MonoBehaviour {
 	IEnumerator changeLevel() {
 		float fadeTime = GameObject.Find("FadeInOut").GetComponent<ScreenFading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
+		Debug.Log (level_name);
 		SceneManager.LoadScene (level_name);
 	}
 }
