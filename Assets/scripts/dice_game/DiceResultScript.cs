@@ -2,6 +2,10 @@
 using System.Collections;
 
 [RequireComponent (typeof (AudioSource))]
+/*
+ * Show the UI of whether the player input correct value or not
+ * Either a Cross or a circle with color and sound effects
+ * */
 public class DiceResultScript : MonoBehaviour {
 
 	AudioSource[] audio;

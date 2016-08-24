@@ -20,10 +20,10 @@ public class playDemoVideo : MonoBehaviour {
 	}
 
 	void Update() {
-				if (Input.anyKey && ready_click ) {
-					movie.Stop ();
-					SceneManager.LoadScene (game_selection);
-				}
+		if (Input.anyKey && ready_click ) {
+			movie.Stop ();
+			SceneManager.LoadScene (game_selection);
+		}
 	}
 
 	IEnumerator waitToClick() {

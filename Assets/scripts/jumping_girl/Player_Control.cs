@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Player Controls and animation
+ * 
+ */ 
 public class Player_Control : MonoBehaviour {
 
 	//Player Input
-	bool left = false;
-	bool right = false;
-	bool down = false;
+	bool left,right,down,up = false;
 
 	//Which player is using this script 1 or 2
 	public int player_num;
@@ -56,17 +58,23 @@ public class Player_Control : MonoBehaviour {
 	}
 
 
-
+	/*
+	 * Check for player controller input, starts animation
+	 * Output - Starts animation depending on key input
+	 * 
+	 * */
 	void inputControl() {
 		//Get input control depending on player 1 or 2
 		if (player_num == 1) {
 			left = Input.GetKeyDown (KeyCode.LeftArrow);
 			right = Input.GetKeyDown (KeyCode.RightArrow);
 			down = Input.GetKeyDown (KeyCode.DownArrow);
+			up = Input.GetKeyDown (KeyCode.UpArrow);
 		} else {
 			left = Input.GetKeyDown (KeyCode.A);
 			right = Input.GetKeyDown (KeyCode.D);
 			down = Input.GetKeyDown (KeyCode.S);
+			up = Input.GetKeyDown (KeyCode.W);
 		}
 		int position_x = (int)transform.position.x;
 
@@ -74,7 +82,7 @@ public class Player_Control : MonoBehaviour {
 		//depending on the character location
 		switch (position_x) {
 		case 3:
-			if (down) {
+			if (down||up) {
 				moveCharacter ("Rjumpleft", (float)-1);
 			}
 			break;
@@ -88,7 +96,7 @@ public class Player_Control : MonoBehaviour {
 			}
 			break;
 		case -4:
-			if (down) {
+			if (down||up) {
 				moveCharacter ("Ljumpright", (float)-1);
 			}
 			break;
@@ -97,13 +105,14 @@ public class Player_Control : MonoBehaviour {
 		}
 	}
 
-	//Activate animation and update the score
+	//Activate animation and update the score and start jump sound effect.
 	void moveCharacter(string animation, float landing_x) {
 		jump_sound ();
 		anim.SetTrigger(animation);
 		global.GetComponent<ScoreScript> ().update_score (landing_x);
 	}
 
+	//Alternating jump sound effects.
 	void jump_sound() {
 		if (altingJump)
 			jump1.Play ();

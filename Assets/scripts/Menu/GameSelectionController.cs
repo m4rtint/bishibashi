@@ -2,6 +2,10 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+/*
+ * Changing menu selection with left and right keyboard selection
+ * 
+ * */
 public class GameSelectionController : MonoBehaviour {
 
 	Vector3 target;
@@ -9,17 +13,14 @@ public class GameSelectionController : MonoBehaviour {
 
 	readonly float speed = 50; //Speed of animation choosing game
 
-	bool left;
-	bool right;
-	bool enter;
-	bool space;
+	bool left, right, enter, space; //Keyboard input
 
 	int current_index; //Currently pointing at game #
 	readonly int max_index = 1; //Amount of games on the board
 
 	string level_name; //Current Chosen level name
 
-	public AudioClip soundEffect;
+	public AudioClip soundEffect; //SFX when something is picked
 
 	void Start() {
 		x_position = this.GetComponent<Transform> ().position.x;

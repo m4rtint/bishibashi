@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Fade In and Out between Menus
+ * */
 public class FadeObjectInOut : MonoBehaviour
 {
 	float duration = 1;
 	float alphaTemp = 0;
-
 
 	public void Update(){
 		lerpAlpha();

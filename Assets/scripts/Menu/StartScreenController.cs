@@ -2,22 +2,20 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+/*
+ * Start Menu/Screen controller
+ */ 
 public class StartScreenController : MonoBehaviour {
 
-	bool any = false;
 	// Update is called once per frame
 	void Update () {
-		any = Input.anyKeyDown;
-
-		if (any) {
+		if (Input.anyKeyDown) {
 			StartCoroutine(changeLevel ());
-			Debug.Log ("pressing any");
 		}
 
 	}
 
 	IEnumerator changeLevel() {
-		Debug.Log ("Inside");
 		float fadeTime = this.GetComponent<ScreenFading> ().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
 		SceneManager.LoadScene ("MainMenu");

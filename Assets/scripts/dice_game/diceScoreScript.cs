@@ -1,19 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Player 1 and Player 2 Keyboard input
+ * starting and stopping dice randomization and dice animation
+ * 
+ */
 public class diceScoreScript : MonoBehaviour {
 
 	//Scoreboard
 	int p1_score,p2_score;
 
 	//P1 - Controls
-	bool left,down,right, P1_allowPress;
+	bool left,down,right,up, P1_allowPress;
 
 	//P2 - Controls
-	bool a,s,d, P2_allowPress;
+	bool a,s,d,w, P2_allowPress;
 
 	//Whether or not to randomize
 	bool startRandomize;
+	//This value determines if any dice can start animation
+	//If value = 3, any one of the three dice can take a value.
+	//Since there are 3 dice, each one takes one value.
+	//Once it reaches 0, none of the dice can start animating anymore.
+	//(This is to make sure no dice can animate more than once in one round)
 	int startAnim;
 
 	//Reference to other scripts
@@ -67,30 +77,41 @@ public class diceScoreScript : MonoBehaviour {
 		//Player 1 - KeyInput
 		left = Input.GetKeyDown (KeyCode.LeftArrow);
 		down = Input.GetKeyDown (KeyCode.DownArrow);
+		up = Input.GetKeyDown (KeyCode.UpArrow);
 		right = Input.GetKeyDown (KeyCode.RightArrow);
 
 		//Player 2 - KeyInput 
 		a = Input.GetKeyDown (KeyCode.A);
 		s = Input.GetKeyDown (KeyCode.S);
+		w = Input.GetKeyDown (KeyCode.W);
 		d = Input.GetKeyDown (KeyCode.D);
 
+		//END GAME
 		//When Someone reaches winning score
 		if (p1_score >= 100 || p2_score >= 100){
+			//Stop Sound Effects and background music
 			gun_shot_sfx.Stop ();
 			GameObject.Find ("Main Camera").GetComponent<AudioSource> ().Stop ();
+			//Set the finishing scores and set endgame value as true.
 			GameObject.Find ("scoreboard_final").GetComponent<scoreboard_script>().set_finish_game(p1_score,p2_score);
 			return;
 		}
 
+		/*
+		 * If dice is not in mid animation - Allow players to press. 
+		 * 		See which button the players presses
+		 */
 		if (P1_allowPress) {
 			//Dice Position - P1 - 0
 			if (a) {
+				//Add up score
 				updateScore (1, 0);
+				//Show if P1 or P2 win/lose the round on UI.
 				Player_Text_L.GetComponent<PlayerResultUI> ().setText (1);
 			}
 
 			//Dice Position - P1 - 1
-			if (s) {
+			if (s||w) {
 				updateScore (1, 1);
 				Player_Text_M.GetComponent<PlayerResultUI> ().setText (1);
 			}
@@ -110,7 +131,7 @@ public class diceScoreScript : MonoBehaviour {
 			}
 
 			//Dice Position - P2 - 1
-			if (down) {
+			if (down||up) {
 				updateScore (2, 1);
 				Player_Text_M.GetComponent<PlayerResultUI> ().setText (2);
 			}
@@ -123,6 +144,12 @@ public class diceScoreScript : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Update the score for both players 
+	 * proceed to roll the dice depending on outcome.
+	 * Input - (int - 1,2) player's score to update, (int - 0,1,2) Which dice location
+	 * Output - score is updated
+	 */
 	void updateScore(int player, int diceLocation) {
 		if (diceValue.get_value (diceLocation) == diceValue.get_max_value ()) {
 		//Correct Match
@@ -152,6 +179,11 @@ public class diceScoreScript : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Start randomization on backend as well as animation
+	 * Input - (bool) player is right/wrong, (int
+	 * 
+	 */ 
 	void start_diceRoll(bool rw, int l, int p) {
 
 		//Result Sprite appears
@@ -214,7 +246,8 @@ public class diceScoreScript : MonoBehaviour {
 
 	/*
 	 * Changing the sprite to become a cross or circle depending on result
-	 * Input: Bool RightOr Wrong result, int location of dice, int Player Number
+	 * Input: (bool) result, (int - 0,1,2) dice location, (int - 1,2) Player Number
+	 * Output: send results to corresponsing Dice object.
 	 */
 	void set_result(bool rightwrong, int diceLocation,int player){
 		switch (diceLocation) {
@@ -250,7 +283,8 @@ public class diceScoreScript : MonoBehaviour {
 
 	/*
 	 * The Players score
-	 * Input: Player number
+	 * Input: (int - 1,2) Player number
+	 * Output: (int) Return player score
 	 */
 	public int get_score (int player) {
 		if (player == 1) {
