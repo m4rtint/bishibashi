@@ -15,6 +15,8 @@ public class GameSelectionController : MonoBehaviour {
 
 	bool left, right, enter, space; //Keyboard input
 
+	float timeFreeze;//Timer for freezing controls
+
 	int current_index; //Currently pointing at game #
 	readonly int max_index = 1; //Amount of games on the board
 
@@ -23,6 +25,7 @@ public class GameSelectionController : MonoBehaviour {
 	public AudioClip soundEffect; //SFX when something is picked
 
 	void Start() {
+		timeFreeze = 0; 
 		x_position = this.GetComponent<Transform> ().position.x;
 		target = new Vector3 (x_position, 0, 0);
 		current_index = 0;
@@ -30,22 +33,27 @@ public class GameSelectionController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		left = Input.GetKeyDown (KeyCode.LeftArrow);
-		right = Input.GetKeyDown (KeyCode.RightArrow);
-		enter = Input.GetKeyDown (KeyCode.Return);
-		space = Input.GetKeyDown (KeyCode.Space);
-
+		//Freeze controls for 1 second after clicking on a control
+		if (timeFreeze <= 0) {
+			left = Input.GetKeyDown (KeyCode.LeftArrow);
+			right = Input.GetKeyDown (KeyCode.RightArrow);
+			enter = Input.GetKeyDown (KeyCode.Return);
+			space = Input.GetKeyDown (KeyCode.Space);
+		} else {
+			timeFreeze -= Time.deltaTime;
+		}
 		//Make sure cannot go more to the left.
 		if (left && (current_index-1 < 0)) {
 			current_index++;
 			x_position = this.GetComponent<Transform> ().position.x - 5;
-
+			timeFreeze = 0.1f;
 		}
 
 		//Make sure Cannot go more to the right.
 		if (right && (current_index+1 > max_index)) {
 			current_index--;
 			x_position = this.GetComponent<Transform> ().position.x + 5;
+			timeFreeze = 0.1f;
 		}
 
 		//Chosen Level change when going through different games in selection menu (Main Menu).
@@ -70,6 +78,7 @@ public class GameSelectionController : MonoBehaviour {
 		target = new Vector3(x_position,0,0);
 		float step = speed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards (transform.position, target, step);
+
 	}
 
 
